@@ -1,12 +1,23 @@
 ﻿using LocadoraVeiculos.Models;
 using System.ComponentModel.DataAnnotations;
 
-public class FabricanteCreateDTO
+namespace LocadoraVeiculos.DTOs
 {
-    [Required]
-    public string Nome { get; set; }
+    /// <summary>
+    /// DTO para criação de um fabricante.
+    /// </summary>
+    public class FabricanteCreateDTO
+    {
+        /// <summary>
+        /// Nome do fabricante.
+        /// </summary>
+        [Required(ErrorMessage = "Nome é obrigatório")]
+        public string Nome { get; set; }
 
-    [Required]
-    public string PaisOrigem { get; set; }
-
+        /// <summary>
+        /// País de origem do fabricante.
+        /// </summary>
+        [Required(ErrorMessage = "PaisOrigem é obrigatório")]
+        public string PaisOrigem { get; set; }
+    }
 }
